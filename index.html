@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudySync By Prata Smaran</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body class="light">
+  <div id="main-container">
+    <h1>StudySync</h1>
+
+    <div class="timer-container">
+      <svg class="progress-ring" width="280" height="280">
+        <circle
+          class="progress-ring__circle"
+          stroke="#ffd54f"
+          stroke-width="12"
+          fill="transparent"
+          r="134"
+          cx="140"
+          cy="140"
+        />
+      </svg>
+      <div class="timer-display" id="timer">00:25:00</div>
+    </div>
+
+    <div class="timer-settings">
+      <label>Sprint Duration:</label>
+      <input type="number" id="hours" min="0" value="0" placeholder="HH" /> :
+      <input type="number" id="minutes" min="0" max="59" value="25" placeholder="MM" /> :
+      <input type="number" id="seconds" min="0" max="59" value="0" placeholder="SS" />
+    </div>
+
+    <div class="goal-input">
+      <label for="goal">Sprint Goal:</label>
+      <input id="goal" type="text" placeholder="Your goal for this sprint" />
+      <div><strong>Current Goal:</strong> <span id="display-goal">None</span></div>
+    </div>
+
+    <div class="session-info">
+      <span>Sprints Completed: <span id="session-count">0</span></span>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="reset-btn">Reset</button>
+      <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+    </div>
+
+    <div class="sound-select">
+      <label for="sound-select">Sound on End:</label>
+      <select id="sound-select">
+        <option value="beep1">Beep 1</option>
+        <option value="beep2">Beep 2</option>
+      </select>
+    </div>
+
+    <div class="theme-select">
+      <label for="theme">Theme:</label>
+      <select id="theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="ocean">Ocean</option>
+        <option value="sunset">Sunset</option>
+        <option value="forest">Forest</option>
+      </select>
+    </div>
+
+    <div class="quote-box" id="quote">
+      “Do something instead of killing time. Because time is killing you.” – Paulo Coelho
+    </div>
+
+    <!-- Audio elements for sounds -->
+    <audio id="beep1" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+    <audio id="beep2" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+  </div>
+
+  <footer>Developed by Prata Smaran Jena</footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

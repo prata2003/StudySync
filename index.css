@@ -1,0 +1,243 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+/* Timer container and circle */
+.timer-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 20px auto 10px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+}
+
+.progress-ring__circle {
+  stroke-dasharray: 842; /* 2 * PI * r (r=134) */
+  stroke-dashoffset: 842;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+  stroke-width: 12;
+}
+
+.timer-display {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 280px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #ffd54f;
+  user-select: none;
+}
+
+/* Timer settings */
+.timer-settings {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.timer-settings input {
+  width: 45px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 4px 0;
+  transition: border-color 0.3s;
+}
+
+.timer-settings input:focus {
+  border-color: #ffd54f;
+  outline: none;
+}
+
+/* Goal input */
+.goal-input {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.goal-input input {
+  width: 70%;
+  max-width: 400px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+.goal-input input:focus {
+  border-color: #ffd54f;
+  outline: none;
+}
+
+.goal-input div {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Session info */
+.session-info {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #ffd54f;
+  color: #3e2723;
+  box-shadow: 0 3px 8px rgba(255, 213, 79, 0.6);
+  transition: background 0.3s, transform 0.2s;
+  user-select: none;
+}
+
+.controls button:hover {
+  background: #ffca28;
+  transform: translateY(-2px);
+}
+
+.controls button:active {
+  transform: translateY(0);
+}
+
+/* Sound selector */
+.sound-select {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sound-select select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.sound-select select:focus {
+  border-color: #ffd54f;
+  outline: none;
+}
+
+/* Theme selector */
+.theme-select {
+  margin-bottom: 25px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.theme-select select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.theme-select select:focus {
+  border-color: #ffd54f;
+  outline: none;
+}
+
+/* Quote box */
+.quote-box {
+  font-style: italic;
+  font-size: 14px;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+  user-select: none;
+}
+
+/* Footer fixed */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #000000;
+  user-select: none;
+  pointer-events: none;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Themes */
+
+body.light {
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  color: #333;
+}
+
+body.dark {
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  color: #fff;
+}
+
+body.ocean {
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  color: #fff;
+}
+
+body.sunset {
+  background: linear-gradient(to right, #ee7752, #e73c7e);
+  color: #fff;
+}
+
+body.forest {
+  background: linear-gradient(to right, #134e5e, #71b280);
+  color: #fff;
+}
