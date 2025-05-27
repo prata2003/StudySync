@@ -187,7 +187,7 @@ function toggleFullscreen() {
 
 // Load theme from localStorage or default
 function loadTheme() {
-  const savedTheme = localStorage.getItem("app-theme") || "light";
+  const savedTheme = localStorage.getItem("app-theme") || "Sunset";
   document.body.className = savedTheme;
   themeSelect.value = savedTheme;
 }
